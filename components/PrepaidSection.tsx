@@ -1,50 +1,50 @@
-import WireframeImage from "./WireframeImage";
+import React from "react";
+import PrepaidSectionCard from "./PrepaidSectionCard";
 
 export default function PrepaidSection() {
-  const prepaidPlans = [
-    { speed: "10 MEGA", price: "R$10,00",  },
-    { speed: "100 MEGA", price: "R$50,00",  },
-    { speed: "600 MEGA", price: "R$100,00",  },
-    { speed: "800 MEGA", price: "R$130,00",  },
+  const Prepaiplans = [
+    {
+      title: "",
+      speed: "FORT PLAY",
+      price: "R$ 79,90",
+      features: ["Lorem Express", "Lorem Ipsum", "Lorem Premium"],
+    },
+    {
+      title: "",
+      speed: "300 MEGA",
+      price: "R$ 79,90",
+      features: ["Lorem Express", "Lorem Ipsum", "Lorem Premium"],
+    },
+    {
+      title: "",
+      speed: "600 MEGA",
+      price: "R$ 99,90",
+      features: ["Lorem Express", "Lorem Ipsum", "Lorem Premium"],
+      isPopular: true,
+    },
+    {
+      title: "",
+      speed: "1000 MEGA",
+      price: "R$ 129,90",
+      features: ["Lorem Express", "Lorem Ipsum", "Lorem Premium"],
+    },
   ];
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4">
-          Outros Planos
-        </h2>
-        <p className="text-center text-gray-600 mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing
-        </p>
-        <div className="grid md:grid-cols-4 gap-6">
-          {prepaidPlans.map((plan, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow p-6 text-center"
-            >
-              <h3 className="text-xl font-bold mb-2">{plan.speed}</h3>
-              <WireframeImage
-                height="100px"
-                width=""
-                className="mx-auto mb-4"
-              />
-              <p className="text-2xl font-bold mb-4">{plan.price}</p>
-              <div className="space-y-2 mb-4">
-                <div className="flex items-center justify-center space-x-2">
-                  <WireframeImage width="16px" height="16px" />
-                  <span className="text-sm">Lorem Express</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <WireframeImage width="16px" height="16px" />
-                  <span className="text-sm">Lorem Ipsum</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <WireframeImage width="16px" height="16px" />
-                  <span className="text-sm">Lorem Premium</span>
-                </div>
-              </div>
-            </div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#020e24] to-[#1f519c]">
+            Outros Planos
+          </h2>
+          <p className="mt-4 text-lg text-[#12305c] max-w-2xl mx-auto">
+            Encontre o plano pré-pago ideal para você, com flexibilidade e
+            controle total sobre seu consumo.
+          </p>
+        </div>
+        <div className="flex flex-col justify-between items-center gap-8 md:flex md:flex-col md:items-center md:px-16 md:gap-8 lg:flex-row lg:items-stretch lg:px-0 lg:gap-6 xl:gap-8 2xl:gap-12">
+          {Prepaiplans.map((plan, index) => (
+            <PrepaidSectionCard key={index} {...plan} />
           ))}
         </div>
       </div>

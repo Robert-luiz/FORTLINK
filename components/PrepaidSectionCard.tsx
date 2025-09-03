@@ -3,7 +3,6 @@ interface PlanCardProps {
   speed: string;
   price: string;
   features: string[];
-  isPopular?: boolean;
 }
 
 export default function PlanCard({
@@ -11,7 +10,6 @@ export default function PlanCard({
   speed,
   price,
   features,
-  isPopular = false,
 }: PlanCardProps) {
   const CheckIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg
@@ -30,17 +28,7 @@ export default function PlanCard({
 
   return (
     <div
-      className={`w-full flex flex-col items-center justify-between  bg-gradient-to-br from-[#020e24] to-[#001A41] border border-gray-700 hover:border-[#00D109] hover:scale-[1.01] transition-all duration-300 ${
-        isPopular
-          ? "bg-gradient-to-r from-[#020e24] to-[#001A41] border-2 border-black"
-          : "border border-gray-200"
-      }`}
-    >
-      {isPopular && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#00B723] to-[#00D109] text-[#020e24] px-5 py-1.5 rounded-full text-sm font-bold tracking-wider transition-all duration-300">
-          Mais Popular!
-        </div>
-      )}
+      className="w-full flex flex-col items-center justify-between  bg-gradient-to-br from-[#020e24] to-[#001A41] border border-gray-700 hover:border-[#00D109] hover:scale-[1.01] transition-all duration-300">
       <div className="text-center mb-6">
         <h3 className="text-3xl font-bold mb-2 p-4">{speed}</h3>
         <p className="text-sm text-gray-600 mb-4">{title}</p>
