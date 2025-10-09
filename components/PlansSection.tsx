@@ -46,7 +46,7 @@ export default function PlansSection() {
   ];
 
   return (
-    <section className="w-full bg-[#001A41] py-16 sm:py-24">
+    <section className="w-full bg-[url(/plans.jpg)] bg-cover bg-center bg-no-repeat py-16 sm:py-24">
       <div className="container w-full mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-400">

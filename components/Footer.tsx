@@ -2,7 +2,7 @@ import WireframeImage from "./WireframeImage";
 
 export default function Footer() {
     return(
-        <footer className="bg-black text-white py-12">
+        <footer className="bg-gradient-to-r from-[#010816] to-[#011637] text-white py-12">
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-4 gap-8">
                         <div>
@@ -37,8 +37,8 @@ export default function Footer() {
                             </form>
                         </div>
                     </div>
-                    <div className="flex items-center justify-center border-t border-gray-700 mt-8 pt-8">
-                        <h3 className="text-xl font-bold">Desenvolvedores: Robert Luiz & Vitor Brito</h3>
+                    <div className="flex items-center justify-center border-t border-[#00D109] mt-8 pt-8">
+                        <h3 className="text-lg font-bold">Desenvolvedores: Robert Luiz & Vitor Brito</h3>
                     </div>
                 </div>
             </footer>

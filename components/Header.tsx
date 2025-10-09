@@ -2,11 +2,10 @@ import WireframeImage from "./WireframeImage";
 
 export default function Header() {
   return (
-    <header className="bg-gradient-to-r from-[#020e24] to-[#001A41] border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-[#010816] to-[#001A41] border-b border-gray-200 sticky top-0 z-50">
       <nav className=" mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <WireframeImage width="40px" height="40px" className="rounded" />
-          <span className="text-xl font-bold">Logo da Empresa</span>
+          <img className="w-[200px]  drop-shadow-[0_0_10px_#00B723]/70" src="/logo-fortlink.png" alt="" />
         </div>
         <div className="flex items-center space-x-4">
           <div className="hidden md:flex space-x-6">
