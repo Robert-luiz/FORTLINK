@@ -1,9 +1,36 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { FormData, FormErrors } from '../types';
 
 interface PreRegistrationFormProps {
   onClose: () => void;
 }
+
+interface FormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  cpf: string;
+  dob: string;
+  cep: string;
+  street: string;
+  number: string;
+  complement: string;
+  neighborhood: string;
+  city: string;
+  state: string;
+  planType: string;
+  howHeard: string;
+}
+
+type FormErrors = Partial<Record<keyof FormData, string>>;
+
+interface ViaCepResponse {
+  logradouro?: string;
+  bairro?: string;
+  localidade?: string;
+  uf?: string;
+  erro?: boolean;
+}
+
 
 export default function PreRegistrationForm({ onClose }: PreRegistrationFormProps) {
   const [formData, setFormData] = useState<FormData>({
