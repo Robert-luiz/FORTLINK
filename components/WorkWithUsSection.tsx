@@ -1,7 +1,7 @@
 import React from 'react';
 
 const VisitUs: React.FC = () => {
-  const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Avenida+Paulista,Sao+Paulo,Brazil';
+  const googleMapsUrl = 'https://maps.app.goo.gl/gg4bkbVDaY3J6Fsy5';
 
   return (
     <section className="bg-gradient-to-br from-[#020e24] to-[#001A41] min-h-screen flex items-center justify-center bg-white p-6 sm:p-8 lg:p-12">
@@ -30,7 +30,8 @@ const VisitUs: React.FC = () => {
           </div>
 
           <div className="w-full md:w-1/2 lg:w-5/12">
-            <div className="relative aspect-[4/3] bg-gray-200 rounded-2xl shadow-lg" aria-label="Espaço reservado para imagem ou mapa do local">
+            <div className="relative aspect-[4/3] bg-gray-200 rounded-2xl shadow-lg " aria-label="Espaço reservado para imagem ou mapa do local">
+              <img className='w-full h-auto hover:cursor-pointer hover:scale-[1.02] transition-transform duration-500 ease-in-out rounded-2xl' src="./loc.png" alt="" />
             </div>
           </div>
         </div>

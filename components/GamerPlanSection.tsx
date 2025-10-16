@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 interface ResponsiveImageProps {
-  alt: string;
+  alt?: string;
 }
 
 export default function ResponsiveImage({ alt }: ResponsiveImageProps) {
