@@ -1,7 +1,24 @@
+"use client";
 import { title } from "process";
 import PlanCard from "./PlanCard";
+import { useState } from "react";
+import Modal from "./Modal";
+import PreRegistrationForm from "./PreRegistrationForm";
 
 export default function PlansSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<string | undefined>();
+
+  const handleSelectPlan = (planName: string) => {
+    setSelectedPlan(planName); 
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedPlan(undefined); 
+    setIsModalOpen(false);
+  };
+
   const plans = [
     {
       title: "",
@@ -58,10 +75,22 @@ export default function PlansSection() {
         </div>
         <div className="flex flex-col justify-between items-center gap-8 md:flex md:flex-col md:items-center md:px-16 md:gap-8 lg:flex-row lg:items-stretch lg:px-0 lg:gap-6 xl:gap-8 2xl:gap-12">
           {plans.map((plan, index) => (
-            <PlanCard key={index} {...plan} />
+            <PlanCard
+              onSelect={() => handleSelectPlan(plan.speed)}
+              key={index}
+              {...plan}
+            />
           ))}
         </div>
       </div>
+      {selectedPlan && (
+        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+          <PreRegistrationForm
+            onClose={handleCloseModal}
+            selectedPlan={selectedPlan}
+          />
+        </Modal>
+      )}
     </section>
   );
 }

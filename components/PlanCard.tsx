@@ -4,6 +4,7 @@ interface PlanCardProps {
   price: string;
   features: string[];
   isPopular?: boolean;
+  onSelect: () => void;
 }
 
 export default function PlanCard({
@@ -11,6 +12,7 @@ export default function PlanCard({
   speed,
   price,
   features,
+  onSelect,
   isPopular = false,
 }: PlanCardProps) {
   const CheckIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -57,7 +59,10 @@ export default function PlanCard({
         <p className="w-full flex justify-end text-3xl font-extrabold mb-4">
           {price}
         </p>
-        <button className="w-full py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:animate-pulse hover:cursor-pointer bg-gradient-to-r from-[#00B723] to-[#00D109] text-[#020e24] hover:from-[#00D109] hover:to-[#00B723]">
+        <button
+          onClick={onSelect}
+          className="w-full py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:animate-pulse bg-gradient-to-r from-[#00B723] to-[#00D109] text-[#020e24]"
+        >
           Contratar
         </button>
       </div>
